@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="string">Enter any string</label>
+    <input type="textbox" placeholder="enter the string" id="string">
+    <button onclick="largWord()">Submit</button>
+    <p id="result"></p>
+    <script>
+        function largWord(){
+        var lengthArr = []    
+        let str = document.getElementById('string').value 
+        let [arr] = [str.split(' ')]
+       
+        for(let ele of arr){
+            let len = ele.length
+            lengthArr.push(Number(len))
+        }
+
+        let eleNum = (Math.max(...lengthArr))
+        let index = lengthArr.indexOf(eleNum) 
+        console.log(arr[index])
+        document.getElementById('result').innerHTML = 'The largest word is: '+arr[index]
+        }
+        
+    </script>
+</body>
+</html>
